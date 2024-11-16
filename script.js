@@ -4,8 +4,8 @@ const timerDisplay = document.querySelector('.timer');
 const breathingText = document.querySelector('.breathing-text');
 
 // Create audio elements
-const breathInSound = new Audio('breathe-in-87397.mp3');
-const breathOutSound = new Audio('breath-out-242642.mp3');
+const breathInSound = new Audio('/breathe-in-87397.mp3');
+const breathOutSound = new Audio('/breath-out-242642.mp3');
 
 let isRunning = false;
 let isPaused = false;
