@@ -1,0 +1,839 @@
+/* Modern CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #E3F2FD, #BBDEFB, #90CAF9, #64B5F6);
+    background-size: 400% 400%;
+    background-attachment: fixed;
+    animation: gradientFlow 15s ease infinite;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    color: #2C3E50;
+    overflow-x: hidden;
+    position: relative;
+    padding: 2rem 0;
+    gap: 2rem;
+}
+
+/* Premium Background Effect */
+.background-gradient {
+    display: none;
+}
+
+.container {
+    position: relative;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+    border-radius: 30px;
+    padding: 2.5rem;
+    width: 440px;
+    max-height: 90vh;
+    overflow-y: auto;
+    scrollbar-width: none; /* Firefox */
+}
+
+.container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+
+/* Create a wrapper div for the container */
+.container-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: containerFloat 6s ease-in-out infinite;
+    margin-bottom: 2rem;
+}
+
+/* New container float animation */
+@keyframes containerFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Premium Container Effects */
+.container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: 1px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.03)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+                  linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box,
+          linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+}
+
+.timer {
+    font-size: 5rem;
+    font-weight: 600;
+    margin: 1.5rem 0;
+    background: linear-gradient(180deg, #1A237E, #283593);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    letter-spacing: -1px;
+    transition: all 0.3s ease;
+}
+
+.breathing-text {
+    font-size: 1.4rem;
+    margin: 1.5rem 0;
+    font-weight: 400;
+    letter-spacing: -0.5px;
+    color: #1A237E;
+    transition: all 0.3s ease;
+}
+
+.button-container {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+button {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 180px;
+    position: relative;
+    overflow: hidden;
+}
+
+#startButton {
+    background: linear-gradient(
+        135deg,
+        #1A237E,
+        #283593
+    );
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#startButton:hover {
+    background: linear-gradient(
+        135deg,
+        #283593,
+        #303F9F
+    );
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(26, 35, 126, 0.2);
+}
+
+#stopButton {
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #1A237E;
+}
+
+#stopButton:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Premium Breathing Animation */
+@keyframes breathe {
+    0%, 100% {
+        transform: scale(1);
+        letter-spacing: -0.5px;
+    }
+    50% {
+        transform: scale(1.05);
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Ambient Light Animation */
+@keyframes ambientPulse {
+    0%, 100% {
+        opacity: 0.5;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.8;
+        transform: scale(1.2);
+    }
+}
+
+.breathing-active {
+    animation: breathe 4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Active Container State */
+.container.active {
+    box-shadow: 0 0 50px rgba(103, 58, 183, 0.1);
+}
+
+/* Floating Effect */
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 2rem;
+        margin: 1rem;
+        width: 95%;
+    }
+    
+    .timer {
+        font-size: 4rem;
+    }
+    
+    .breathing-text {
+        font-size: 1.2rem;
+    }
+    
+    .button-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    button {
+        width: 100%;
+        padding: 0.9rem 1.8rem;
+    }
+}
+
+/* Premium Hover Effects */
+.container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Smooth Transitions */
+* {
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* Focus States */
+button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.3);
+}
+
+/* Add this to HTML for ambient light */
+.ambient-light {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+/* Add floating circles in the background */
+.background-gradient::before,
+.background-gradient::after {
+    content: '';
+    position: fixed;
+    width: 60vmax;
+    height: 60vmax;
+    border-radius: 50%;
+    background: #ffffff20;
+    animation: gentleFloat 15s infinite;
+    z-index: -1;
+}
+
+.background-gradient::before {
+    left: -10%;
+    top: -10%;
+    background: linear-gradient(45deg, #E1F5FE30, #B3E5FC20);
+    animation: gentleFloat 25s infinite;
+}
+
+.background-gradient::after {
+    right: -10%;
+    bottom: -10%;
+    background: linear-gradient(45deg, #E3F2FD30, #BBDEFB20);
+    animation: gentleFloat 20s infinite reverse;
+}
+
+/* Add new animations */
+@keyframes gradientFlow {
+    0% { background-position: 0% 50% }
+    50% { background-position: 100% 50% }
+    100% { background-position: 0% 50% }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Add subtle particle effect */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.particle {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: particleFloat 20s infinite linear;
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(0) translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.8;
+    }
+    100% {
+        transform: translateY(-100vh) translateX(100vw);
+        opacity: 0;
+    }
+}
+
+/* Add a more gentle floating animation */
+@keyframes gentleFloat {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(2%, 2%);
+    }
+}
+
+.credits {
+    position: relative;
+    margin-top: 2rem;
+    font-size: 14px;
+    color: #fff;
+    text-align: right;
+    opacity: 0.8;
+    animation: float 3s ease-in-out infinite;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.credits .name {
+    color: #fff;
+    font-weight: 500;
+}
+
+/* Cute floating animation */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Heart beat animation for the heart emoji */
+.credits:hover {
+    opacity: 1;
+}
+
+.credits:hover ❤️ {
+    display: inline-block;
+    animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.1);
+    }
+    50% {
+        transform: scale(1);
+    }
+    75% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Update Stats Container Styles */
+.stats-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.95);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.stats-container h2 {
+    color: #1A237E;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+/* Achievement Card */
+.achievement-card {
+    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    animation: slideIn 0.5s ease-out;
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+}
+
+.achievement-text {
+    text-align: left;
+}
+
+.achievement-text h3 {
+    color: #1A237E;
+    margin-bottom: 0.5rem;
+}
+
+.achievement-text p {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Update Benefits Container Styles */
+.benefits-container {
+    width: 90%;
+    max-width: 800px; /* Increased width */
+    margin: 2rem auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.benefits-container h3 {
+    color: #1A237E;
+    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    text-align: center;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.benefit-item {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-title {
+    color: #1A237E;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.benefit-desc {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.benefit-bar {
+    height: 6px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1A237E, #448AFF);
+    border-radius: 3px;
+    transition: width 1.5s ease-out;
+}
+
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .benefit-item {
+        padding: 1.2rem;
+    }
+}
+
+/* Journey Section */
+.journey-section {
+    margin: 2rem 0;
+}
+
+.journey-stats {
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.journey-item {
+    flex: 1;
+    padding: 1rem;
+    background: rgba(26, 35, 126, 0.05);
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.journey-item:hover {
+    transform: translateY(-3px);
+}
+
+.journey-number {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #1A237E;
+    margin-bottom: 0.3rem;
+}
+
+.journey-label {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Update Close Button */
+.close-stats {
+    background: linear-gradient(135deg, #1A237E, #283593);
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.close-stats:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 35, 126, 0.2);
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Gallery Styles */
+.meditation-gallery {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.meditation-gallery.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item {
+    flex: 1;
+    max-width: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transform-style: preserve-3d;
+    animation: floatImage 6s ease-in-out infinite;
+    position: relative;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transform: scale(1);
+    transition: transform 0.5s ease;
+}
+
+/* Floating animation for images */
+@keyframes floatImage {
+    0%, 100% {
+        transform: translateY(0) rotateX(0);
+    }
+    25% {
+        transform: translateY(-8px) rotateX(5deg);
+    }
+    75% {
+        transform: translateY(8px) rotateX(-5deg);
+    }
+}
+
+/* Add shine effect */
+.gallery-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%) rotate(45deg);
+    }
+    20%, 100% {
+        transform: translateX(100%) rotate(45deg);
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .meditation-gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    
+    .gallery-item {
+        width: 90%;
+        max-width: 400px;
+    }
+    
+    .gallery-item img {
+        height: 300px;
+    }
+}
+
+/* Update Star Progress Styles */
+.star-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 300px;
+    margin: 0 auto;
+    position: relative;
+    padding: 1rem 0;
+}
+
+.star-container::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #1A237E 0%, rgba(26, 35, 126, 0.2) 100%);
+    transform: translateY(-50%);
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.star {
+    font-size: 1.5rem;
+    opacity: 0.3;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+    background: white;
+    border-radius: 50%;
+    padding: 2px;
+}
+
+.star.achieved {
+    opacity: 1;
+    transform: scale(1.2);
+    animation: starAchieved 0.5s ease-out;
+}
+
+/* Celebration Animation */
+.celebration {
+    position: fixed;
+    font-size: 3rem;
+    pointer-events: none;
+    animation: celebrate 1s ease-out forwards;
+    z-index: 1000;
+}
+
+@keyframes celebrate {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.5) rotate(-45deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -100%) scale(1.5) rotate(0deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -150%) scale(1) rotate(45deg);
+    }
+}
+
+@keyframes starAchieved {
+    0% {
+        transform: scale(0.8);
+    }
+    50% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(1.2);
+    }
+}
+
+/* Add new progress bar styles */
+.meditation-progress {
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #1A237E, #448AFF);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-time {
+    margin-top: 0.5rem;
+    color: #1A237E;
+    font-size: 0.9rem;
+    font-weight: 500;
+}

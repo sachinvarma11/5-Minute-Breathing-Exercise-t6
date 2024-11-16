@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Minute Meditation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    <div class="ambient-light"></div>
+    <div class="particles"></div>
+    
+    <div class="container-wrapper">
+        <div class="container">
+            <h1>5 Minute Meditation</h1>
+            <div class="timer">5:00</div>
+            <div class="breathing-text">Click Start to begin</div>
+            <div class="button-container">
+                <button id="startButton">Start Meditation</button>
+                <button id="stopButton" disabled>Stop Meditation</button>
+            </div>
+            <div class="meditation-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-time">0%</div>
+            </div>
+            <div class="motivation-text">Take a moment for yourself</div>
+        </div>
+    </div>
+
+    <!-- Benefits Section (outside the card) -->
+    <div class="benefits-container">
+        <h3>Scientific Benefits You're Building by doing 5 Minute Meditation</h3>
+        <div class="benefits-grid">
+            <div class="benefit-item">
+                <div class="benefit-icon">🧠</div>
+                <div class="benefit-title">Stress Reduction</div>
+                <div class="benefit-desc">Lowers cortisol levels by up to 23%</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="stressBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">❤️</div>
+                <div class="benefit-title">Heart Rate Variability</div>
+                <div class="benefit-desc">Improves HRV by 35% for better resilience</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="hrvBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-title">Mental Focus</div>
+                <div class="benefit-desc">Enhances attention span by 14%</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="focusBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🌊</div>
+                <div class="benefit-title">Blood Pressure</div>
+                <div class="benefit-desc">Reduces systolic BP by 3-5 mmHg</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="bpBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">😌</div>
+                <div class="benefit-title">Anxiety Relief</div>
+                <div class="benefit-desc">Decreases anxiety symptoms by 27%</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="anxietyBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🧬</div>
+                <div class="benefit-title">Immune Function</div>
+                <div class="benefit-desc">Boosts immune markers by 15%</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="immuneBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">💪</div>
+                <div class="benefit-title">Emotional Resilience</div>
+                <div class="benefit-desc">Increases emotional control by 21%</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="emotionalBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🧪</div>
+                <div class="benefit-title">Inflammation</div>
+                <div class="benefit-desc">Reduces inflammatory markers by 11%</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="inflammationBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-title">Energy Levels</div>
+                <div class="benefit-desc">Improves mental energy by 25%</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="energyBar"></div>
+                </div>
+            </div>
+            <div class="benefit-item">
+                <div class="benefit-icon">🌙</div>
+                <div class="benefit-title">Sleep Quality</div>
+                <div class="benefit-desc">Enhances sleep efficiency by 18%</div>
+                <div class="benefit-bar">
+                    <div class="bar-fill" id="sleepBar"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="meditation-gallery">
+        <div class="gallery-item">
+            <img src="IMG_6556.JPG" alt="Meditation 1" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_6557.JPG" alt="Meditation 2" loading="lazy">
+        </div>
+        <div class="gallery-item">
+            <img src="IMG_6558.JPG" alt="Meditation 3" loading="lazy">
+        </div>
+    </div>
+
+    <div class="credits">
+        Built with ❤️ by <span class="name">Sachin Varma</span>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
